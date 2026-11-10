@@ -1,0 +1,1037 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Career Analysis | Career Compass</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background: #f8fafc;
+            color: #111827;
+            font-family: Arial, sans-serif;
+        }
+
+        /* =========================
+           NAVBAR
+        ========================= */
+
+        .result-navbar {
+            height: 72px;
+            padding: 0 6%;
+            background: #ffffff;
+            border-bottom: 1px solid #e5e7eb;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .result-brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            color: #111827;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 17px;
+        }
+
+        .result-brand-mark {
+            width: 34px;
+            height: 34px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background: #111827;
+            color: #ffffff;
+
+            border-radius: 9px;
+            font-weight: 800;
+        }
+
+        .result-label {
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            color: #6b7280;
+        }
+
+
+        /* =========================
+           MAIN
+        ========================= */
+
+        .result-container {
+            max-width: 1100px;
+            margin: 55px auto;
+            padding: 0 24px;
+        }
+
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        .result-header {
+            text-align: center;
+            margin-bottom: 42px;
+        }
+
+        .result-eyebrow {
+            margin: 0 0 10px;
+
+            color: #4f46e5;
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+        }
+
+        .result-header h1 {
+            margin: 0;
+
+            font-size: 38px;
+            line-height: 1.15;
+            letter-spacing: -1px;
+        }
+
+        .result-header p {
+            max-width: 600px;
+            margin: 14px auto 0;
+
+            color: #6b7280;
+            line-height: 1.6;
+            font-size: 15px;
+        }
+
+
+        /* =========================
+           CAREER MATCH CARDS
+        ========================= */
+
+        .career-matches {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .career-card {
+            background: #ffffff;
+
+            border: 1px solid #e5e7eb;
+            border-radius: 18px;
+
+            padding: 25px;
+
+            box-shadow: 0 8px 25px rgba(15, 23, 42, 0.05);
+
+            transition: transform 0.2s ease,
+                box-shadow 0.2s ease;
+        }
+
+        .career-card:hover {
+            transform: translateY(-3px);
+
+            box-shadow: 0 14px 30px rgba(15, 23, 42, 0.08);
+        }
+
+        .career-card.best-match {
+            border: 2px solid #4f46e5;
+        }
+
+        .match-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            margin-bottom: 20px;
+        }
+
+        .rank {
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 0.8px;
+            color: #6b7280;
+        }
+
+        .best-label {
+            padding: 5px 9px;
+
+            border-radius: 20px;
+
+            background: #eef2ff;
+            color: #4f46e5;
+
+            font-size: 10px;
+            font-weight: 800;
+        }
+
+        .career-card h2 {
+            margin: 0 0 14px;
+
+            font-size: 22px;
+            line-height: 1.25;
+        }
+
+        .score-row {
+            display: flex;
+            align-items: baseline;
+            gap: 7px;
+        }
+
+        .score {
+            color: #4f46e5;
+            font-size: 32px;
+            font-weight: 800;
+        }
+
+        .score-text {
+            color: #6b7280;
+            font-size: 13px;
+        }
+
+        .score-bar {
+            width: 100%;
+            height: 7px;
+
+            margin-top: 14px;
+
+            background: #e5e7eb;
+            border-radius: 20px;
+
+            overflow: hidden;
+        }
+
+        .score-fill {
+            height: 100%;
+            background: #4f46e5;
+            border-radius: 20px;
+        }
+
+
+        /* =========================
+           BEST MATCH DETAIL
+        ========================= */
+
+        .section-card {
+            margin-top: 25px;
+
+            background: #ffffff;
+
+            border: 1px solid #e5e7eb;
+            border-radius: 20px;
+
+            padding: 30px;
+
+            box-shadow: 0 8px 25px rgba(15, 23, 42, 0.04);
+        }
+
+        .section-heading {
+            margin-bottom: 22px;
+        }
+
+        .section-heading h2 {
+            margin: 0 0 7px;
+
+            font-size: 24px;
+        }
+
+        .section-heading p {
+            margin: 0;
+
+            color: #6b7280;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+
+        /* =========================
+           WHY CAREER
+        ========================= */
+
+        .reason-list {
+            margin: 0;
+            padding: 0;
+
+            list-style: none;
+
+            display: grid;
+            gap: 11px;
+        }
+
+        .reason-list li {
+            padding: 13px 15px;
+
+            background: #f8fafc;
+            border-radius: 10px;
+
+            color: #374151;
+            font-size: 14px;
+        }
+
+        .reason-list li::first-letter {
+            color: #4f46e5;
+        }
+
+
+        /* =========================
+           MATCH BREAKDOWN
+        ========================= */
+
+        .breakdown-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 12px;
+        }
+
+        .breakdown-item {
+            padding: 16px;
+
+            background: #f8fafc;
+
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+        }
+
+        .breakdown-label {
+            display: block;
+
+            margin-bottom: 8px;
+
+            color: #6b7280;
+            font-size: 12px;
+        }
+
+        .breakdown-value {
+            font-size: 21px;
+            font-weight: 800;
+            color: #111827;
+        }
+
+
+        /* =========================
+           SKILLS
+        ========================= */
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .skill-column {
+            padding: 20px;
+
+            background: #f8fafc;
+            border-radius: 14px;
+        }
+
+        .skill-column h3 {
+            margin: 0 0 14px;
+
+            font-size: 15px;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .skill-tag {
+            padding: 7px 10px;
+
+            background: #ffffff;
+            border: 1px solid #e5e7eb;
+            border-radius: 20px;
+
+            color: #374151;
+            font-size: 12px;
+        }
+
+        .skill-tag.matched {
+            color: #4338ca;
+            background: #eef2ff;
+            border-color: #c7d2fe;
+        }
+
+
+        /* =========================
+           JOB ROLES
+        ========================= */
+
+        .role-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+        }
+
+        .role-card {
+            padding: 17px;
+
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+
+            background: #f8fafc;
+
+            text-align: center;
+        }
+
+        .role-card span {
+            display: block;
+
+            margin-bottom: 8px;
+
+            font-size: 22px;
+        }
+
+        .role-card strong {
+            color: #374151;
+            font-size: 13px;
+        }
+
+
+        /* =========================
+           ROADMAP
+        ========================= */
+
+        .roadmap {
+            position: relative;
+
+            margin-top: 28px;
+            padding-left: 38px;
+        }
+
+        .roadmap::before {
+            content: "";
+
+            position: absolute;
+
+            top: 0;
+            bottom: 0;
+            left: 14px;
+
+            width: 2px;
+
+            background: #e0e7ff;
+        }
+
+        .roadmap-step {
+            position: relative;
+
+            margin-bottom: 22px;
+        }
+
+        .roadmap-step:last-child {
+            margin-bottom: 0;
+        }
+
+        .roadmap-number {
+            position: absolute;
+
+            left: -38px;
+            top: 0;
+
+            width: 30px;
+            height: 30px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background: #4f46e5;
+            color: #ffffff;
+
+            border-radius: 50%;
+
+            font-size: 12px;
+            font-weight: 800;
+
+            z-index: 2;
+        }
+
+        .roadmap-content {
+            padding: 16px 18px;
+
+            background: #f8fafc;
+
+            border: 1px solid #e5e7eb;
+            border-radius: 13px;
+        }
+
+        .roadmap-content h3 {
+            margin: 0 0 7px;
+
+            font-size: 16px;
+        }
+
+        .roadmap-content ul {
+            margin: 0;
+            padding-left: 18px;
+        }
+
+        .roadmap-content li {
+            margin: 5px 0;
+
+            color: #6b7280;
+            font-size: 13px;
+            line-height: 1.5;
+        }
+
+
+        /* =========================
+           ACTION
+        ========================= */
+
+        .result-actions {
+            text-align: center;
+            margin: 35px 0 20px;
+        }
+
+        .retake-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+
+            padding: 13px 22px;
+
+            background: #111827;
+            color: #ffffff;
+
+            border-radius: 10px;
+
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 700;
+
+            transition: transform 0.2s ease,
+                background 0.2s ease;
+        }
+
+        .retake-btn:hover {
+            background: #1f2937;
+            transform: translateY(-2px);
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 850px) {
+
+            .career-matches {
+                grid-template-columns: 1fr;
+            }
+
+            .breakdown-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .role-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+        }
+
+
+        @media (max-width: 650px) {
+
+            .result-navbar {
+                padding: 0 20px;
+            }
+
+            .result-label {
+                display: none;
+            }
+
+            .result-container {
+                margin: 35px auto;
+                padding: 0 16px;
+            }
+
+            .result-header h1 {
+                font-size: 30px;
+            }
+
+            .section-card {
+                padding: 22px;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .breakdown-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .role-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .roadmap {
+                padding-left: 35px;
+            }
+
+        }
+    </style>
+</head>
+
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <header class="result-navbar">
+
+        <a href="/" class="result-brand">
+
+            <span class="result-brand-mark">
+                C
+            </span>
+
+            <span>
+                Career Compass
+            </span>
+
+        </a>
+
+        <div class="result-label">
+            CAREER ANALYSIS
+        </div>
+
+    </header>
+
+
+    <main class="result-container">
+
+
+        <!-- HEADER -->
+
+        <section class="result-header">
+
+            <p class="result-eyebrow">
+                YOUR CAREER MATCHES
+            </p>
+
+            <h1>
+                Careers that match your profile
+            </h1>
+
+            <p>
+                Based on your education, skills, interests,
+                work style and career goals.
+            </p>
+
+        </section>
+
+
+        <!-- =========================
+             TOP 3 CAREER MATCHES
+        ========================= -->
+
+        <section class="career-matches">
+
+            {% for career_name, career_score in top_careers %}
+
+            <div class="career-card {% if loop.first %}best-match{% endif %}">
+
+                <div class="match-top">
+
+                    <span class="rank">
+                        MATCH 0{{ loop.index }}
+                    </span>
+
+                    {% if loop.first %}
+
+                    <span class="best-label">
+                        ★ BEST MATCH
+                    </span>
+
+                    {% endif %}
+
+                </div>
+
+
+                <h2>
+                    {{ career_name }}
+                </h2>
+
+
+                <div class="score-row">
+
+                    <span class="score">
+                        {{ career_score }}%
+                    </span>
+
+                    <span class="score-text">
+                        match
+                    </span>
+
+                </div>
+
+
+                <div class="score-bar">
+
+                    <div class="score-fill" style="width: {{ career_score }}%;"></div>
+
+                </div>
+
+            </div>
+
+            {% endfor %}
+
+        </section>
+
+
+        <!-- =========================
+             BEST CAREER
+        ========================= -->
+
+        <section class="section-card">
+
+            <div class="section-heading">
+
+                <h2>
+                    Your Top Career Match
+                </h2>
+
+                <p>
+                    <strong>{{ career }}</strong>
+                    is currently the strongest match for your profile.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             WHY THIS CAREER
+        ========================= -->
+
+        <section class="section-card">
+
+            <div class="section-heading">
+
+                <h2>
+                    Why this career matches you
+                </h2>
+
+                <p>
+                    Your assessment responses show alignment
+                    with this career path.
+                </p>
+
+            </div>
+
+
+            <ul class="reason-list">
+
+                {% for reason in match_reasons %}
+
+                <li>
+                    ✓ {{ reason }}
+                </li>
+
+                {% endfor %}
+
+            </ul>
+
+        </section>
+
+
+        <!-- =========================
+             MATCH BREAKDOWN
+        ========================= -->
+
+        <section class="section-card">
+
+            <div class="section-heading">
+
+                <h2>
+                    Match Breakdown
+                </h2>
+
+                <p>
+                    See how different parts of your profile
+                    contributed to your recommendation.
+                </p>
+
+            </div>
+
+
+            <div class="breakdown-grid">
+
+                <div class="breakdown-item">
+
+                    <span class="breakdown-label">
+                        Education
+                    </span>
+
+                    <span class="breakdown-value">
+                        {{ breakdown.education }}%
+                    </span>
+                </div>
+
+
+                <div class="breakdown-item">
+
+                    <span class="breakdown-label">
+                        Skills
+                    </span>
+
+                    <span class="breakdown-value">
+                        {{ breakdown.skills }}%
+                    </span>
+                </div>
+
+
+                <div class="breakdown-item">
+
+                    <span class="breakdown-label">
+                        Interests
+                    </span>
+
+                    <span class="breakdown-value">
+                        {{ breakdown.interests }}%
+                    </span>
+
+                </div>
+
+
+                <div class="breakdown-item">
+
+                    <span class="breakdown-label">
+                        Work Style
+                    </span>
+
+                    <span class="breakdown-value">
+                        {{ breakdown.work_style }}%
+                    </span>
+
+                </div>
+
+
+                <div class="breakdown-item">
+
+                    <span class="breakdown-label">
+                        Career Goals
+                    </span>
+
+                    <span class="breakdown-value">
+                        {{ breakdown.goals }}%
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             SKILLS
+        ========================= -->
+
+        <section class="section-card">
+
+            <div class="section-heading">
+
+                <h2>
+                    Skills
+                </h2>
+
+                <p>
+                    Your current strengths and the skills
+                    you should develop next.
+                </p>
+
+            </div>
+
+
+            <div class="skills-grid">
+
+
+                <div class="skill-column">
+
+                    <h3>
+                        ✓ Matched Skills
+                    </h3>
+
+                    <div class="skill-tags">
+
+                        {% for skill in matched_skills %}
+
+                        <span class="skill-tag matched">
+                            {{ skill|title }}
+                        </span>
+
+                        {% endfor %}
+
+                    </div>
+
+                </div>
+
+
+                <div class="skill-column">
+
+                    <h3>
+                        + Skills to Build
+                    </h3>
+
+                    <div class="skill-tags">
+
+                        {% for skill in missing_skills %}
+
+                        <span class="skill-tag">
+                            {{ skill|title }}
+                        </span>
+
+                        {% endfor %}
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             JOB ROLES
+        ========================= -->
+
+        <section class="section-card">
+
+            <div class="section-heading">
+
+                <h2>
+                    Suitable Job Roles
+                </h2>
+
+                <p>
+                    Roles you can target as you build
+                    the required skills.
+                </p>
+
+            </div>
+
+
+            <div class="role-grid">
+
+                {% for role in roles %}
+
+                <div class="role-card">
+
+                    <span>
+                        💼
+                    </span>
+
+                    <strong>
+                        {{ role }}
+                    </strong>
+
+                </div>
+
+                {% endfor %}
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             ROADMAP
+        ========================= -->
+
+        <section class="section-card">
+
+            <div class="section-heading">
+
+                <h2>
+                    Your Career Roadmap
+                </h2>
+
+                <p>
+                    Follow these steps in order to move
+                    towards a career in
+                    <strong>{{ career }}</strong>.
+                </p>
+
+            </div>
+
+
+            <div class="roadmap">
+
+                {% for stage, items in roadmap.items() %}
+
+                <div class="roadmap-step">
+
+                    <div class="roadmap-number">
+                        {{ "%02d"|format(loop.index) }}
+                    </div>
+
+
+                    <div class="roadmap-content">
+
+                        <h3>
+                            {{ stage }}
+                        </h3>
+
+                        <ul>
+
+                            {% for item in items %}
+
+                            <li>
+                                {{ item }}
+                            </li>
+
+                            {% endfor %}
+
+                        </ul>
+
+                    </div>
+
+                </div>
+
+                {% endfor %}
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             RETAKE
+        ========================= -->
+
+        <div class="result-actions">
+
+            <a href="/assessment" class="retake-btn">
+                Take Assessment Again →
+            </a>
+
+        </div>
+
+
+    </main>
+
+</body>
+
+</html>

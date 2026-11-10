@@ -1,0 +1,351 @@
+{
+    "Data Analyst": {
+        "education": ["12th", "diploma", "graduation", "postgraduation"],
+        "skills": [
+            "python",
+            "sql",
+            "excel",
+            "data_analysis"
+        ],
+        "interests": [
+            "data",
+            "problem_solving",
+            "research",
+            "technology"
+        ],
+        "work_styles": [
+            "analytical",
+            "problem_solver",
+            "detail_oriented",
+            "organized",
+            "independent"
+        ],
+        "goals": [
+            "high_salary",
+            "job_security",
+            "growth",
+            "remote",
+            "technical"
+        ],
+        "skills_to_learn": [
+            "Advanced Excel",
+            "SQL",
+            "Python",
+            "Pandas",
+            "Data Visualization",
+            "Power BI"
+        ],
+        "roles": [
+            "Data Analyst",
+            "Junior Data Analyst",
+            "Business Data Analyst"
+        ],
+        "roadmap": {
+            "Foundation": [
+                "Learn Excel and spreadsheet fundamentals",
+                "Understand basic statistics",
+                "Learn SQL fundamentals"
+            ],
+            "Programming": [
+                "Learn Python basics",
+                "Learn Pandas and NumPy",
+                "Practice data cleaning and analysis"
+            ],
+            "Visualization": [
+                "Learn Power BI or Tableau",
+                "Create dashboards",
+                "Practice presenting insights from data"
+            ],
+            "Projects": [
+                "Build 2 to 3 data analysis projects",
+                "Create a portfolio",
+                "Document your projects clearly"
+            ],
+            "Job Preparation": [
+                "Practice SQL and Excel interview questions",
+                "Prepare a data analyst resume",
+                "Apply for internships and entry-level roles"
+            ]
+        }
+    },
+
+    "Python Developer": {
+        "education": ["12th", "diploma", "graduation", "postgraduation"],
+        "skills": [
+            "python",
+            "sql",
+            "html_css",
+            "javascript"
+        ],
+        "interests": [
+            "programming",
+            "web",
+            "problem_solving",
+            "technology"
+        ],
+        "work_styles": [
+            "problem_solver",
+            "analytical",
+            "independent",
+            "detail_oriented",
+            "organized"
+        ],
+        "goals": [
+            "high_salary",
+            "growth",
+            "remote",
+            "technical",
+            "job_security"
+        ],
+        "skills_to_learn": [
+            "Advanced Python",
+            "OOP",
+            "Git and GitHub",
+            "Flask",
+            "REST APIs",
+            "SQL",
+            "Problem Solving"
+        ],
+        "roles": [
+            "Python Developer",
+            "Junior Python Developer",
+            "Backend Developer"
+        ],
+        "roadmap": {
+            "Python Foundation": [
+                "Learn Python syntax and fundamentals",
+                "Practice functions, lists, dictionaries and modules",
+                "Learn object-oriented programming"
+            ],
+            "Development": [
+                "Learn Flask or another Python web framework",
+                "Understand REST APIs",
+                "Work with databases using SQL"
+            ],
+            "Tools": [
+                "Learn Git and GitHub",
+                "Learn debugging and basic testing",
+                "Understand virtual environments"
+            ],
+            "Projects": [
+                "Build practical Python projects",
+                "Build at least one Flask project",
+                "Upload projects to GitHub"
+            ],
+            "Job Preparation": [
+                "Practice Python interview questions",
+                "Practice SQL and coding problems",
+                "Prepare a developer resume",
+                "Apply for internships and entry-level jobs"
+            ]
+        }
+    },
+
+    "Web Developer": {
+        "education": ["12th", "diploma", "graduation", "postgraduation"],
+        "skills": [
+            "html_css",
+            "javascript",
+            "python",
+            "sql"
+        ],
+        "interests": [
+            "web",
+            "programming",
+            "design",
+            "problem_solving",
+            "technology"
+        ],
+        "work_styles": [
+            "creative",
+            "problem_solver",
+            "detail_oriented",
+            "independent",
+            "teamwork"
+        ],
+        "goals": [
+            "growth",
+            "remote",
+            "high_salary",
+            "technical",
+            "freelancing"
+        ],
+        "skills_to_learn": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "Responsive Design",
+            "Git and GitHub",
+            "Frontend Framework",
+            "Backend Basics"
+        ],
+        "roles": [
+            "Web Developer",
+            "Frontend Developer",
+            "Junior Full Stack Developer"
+        ],
+        "roadmap": {
+            "Web Foundation": [
+                "Learn HTML structure and semantic elements",
+                "Learn CSS fundamentals",
+                "Practice responsive layouts"
+            ],
+            "JavaScript": [
+                "Learn JavaScript fundamentals",
+                "Understand DOM manipulation",
+                "Build interactive web pages"
+            ],
+            "Development": [
+                "Learn Git and GitHub",
+                "Learn a frontend framework",
+                "Understand backend and API basics"
+            ],
+            "Projects": [
+                "Build responsive websites",
+                "Build a full-stack project",
+                "Create a portfolio website"
+            ],
+            "Job Preparation": [
+                "Practice web development interview questions",
+                "Prepare your portfolio",
+                "Apply for internships and entry-level roles"
+            ]
+        }
+    },
+
+    "UI/UX Designer": {
+        "education": ["12th", "diploma", "graduation", "postgraduation"],
+        "skills": [
+            "html_css",
+            "ui_design"
+        ],
+        "interests": [
+            "design",
+            "web",
+            "creativity",
+            "technology"
+        ],
+        "work_styles": [
+            "creative",
+            "detail_oriented",
+            "independent",
+            "teamwork",
+            "flexible"
+        ],
+        "goals": [
+            "creative_work",
+            "remote",
+            "growth",
+            "freelancing"
+        ],
+        "skills_to_learn": [
+            "Figma",
+            "UI Design",
+            "UX Research",
+            "Wireframing",
+            "Prototyping",
+            "Design Systems"
+        ],
+        "roles": [
+            "UI Designer",
+            "UX Designer",
+            "UI/UX Designer"
+        ],
+        "roadmap": {
+            "Design Foundation": [
+                "Learn basic design principles",
+                "Understand typography, spacing and layout",
+                "Learn color and visual hierarchy"
+            ],
+            "UX Skills": [
+                "Learn user research basics",
+                "Practice wireframing",
+                "Learn user flows"
+            ],
+            "UI Skills": [
+                "Learn Figma",
+                "Create high-fidelity designs",
+                "Learn responsive interface design"
+            ],
+            "Portfolio": [
+                "Create 3 to 4 case studies",
+                "Design real-world interfaces",
+                "Build a professional design portfolio"
+            ],
+            "Job Preparation": [
+                "Practice explaining design decisions",
+                "Prepare a UI/UX resume",
+                "Apply for internships and junior roles"
+            ]
+        }
+    },
+
+    "Business Analyst": {
+        "education": ["12th", "diploma", "graduation", "postgraduation"],
+        "skills": [
+            "excel",
+            "sql",
+            "data_analysis"
+        ],
+        "interests": [
+            "business",
+            "data",
+            "problem_solving",
+            "research",
+            "technology"
+        ],
+        "work_styles": [
+            "analytical",
+            "problem_solver",
+            "organized",
+            "detail_oriented",
+            "teamwork"
+        ],
+        "goals": [
+            "high_salary",
+            "growth",
+            "job_security",
+            "leadership"
+        ],
+        "skills_to_learn": [
+            "Advanced Excel",
+            "SQL",
+            "Business Analysis",
+            "Requirement Gathering",
+            "Data Visualization",
+            "Power BI"
+        ],
+        "roles": [
+            "Business Analyst",
+            "Junior Business Analyst",
+            "Business Intelligence Analyst"
+        ],
+        "roadmap": {
+            "Foundation": [
+                "Understand business analysis fundamentals",
+                "Learn Excel",
+                "Develop analytical thinking"
+            ],
+            "Technical Skills": [
+                "Learn SQL",
+                "Learn Power BI",
+                "Understand basic data analysis"
+            ],
+            "Business Skills": [
+                "Learn requirement gathering",
+                "Practice documentation",
+                "Understand business processes"
+            ],
+            "Projects": [
+                "Create business analysis case studies",
+                "Build dashboards",
+                "Document project requirements"
+            ],
+            "Job Preparation": [
+                "Practice business analyst interview questions",
+                "Prepare a professional resume",
+                "Apply for internships and entry-level roles"
+            ]
+        }
+    }
+}

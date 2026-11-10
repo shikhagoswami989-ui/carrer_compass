@@ -1,0 +1,1235 @@
+/* =========================================================
+   CAREER COMPASS — ASSESSMENT PAGE
+   ========================================================= */
+
+
+/* ---------- BASE ---------- */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f7f9fc;
+    color: #172033;
+}
+
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+.assessment-navbar {
+    height: 72px;
+    padding: 0 7%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background: #ffffff;
+    border-bottom: 1px solid #e8ecf2;
+}
+
+.assessment-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    text-decoration: none;
+    color: #172033;
+
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.brand-mark {
+    width: 34px;
+    height: 34px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 9px;
+
+    background: #172033;
+    color: #ffffff;
+
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.assessment-label {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    color: #7b8495;
+}
+
+
+/* =========================================================
+   MAIN CONTAINER
+========================================================= */
+
+.assessment-container {
+    width: min(900px, 90%);
+    margin: 0 auto;
+    padding: 55px 0 70px;
+}
+
+
+/* =========================================================
+   TOP SECTION
+========================================================= */
+
+.assessment-top {
+    display: flex !important;
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
+
+    gap: 30px;
+
+    text-align: left !important;
+}
+
+.assessment-heading {
+    width: 100%;
+    max-width: 700px;
+
+    margin-left: 0;
+    margin-right: auto;
+
+    text-align: left;
+}
+
+.eyebrow {
+    margin: 0 0 12px;
+
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.4px;
+
+    color: #64748b;
+}
+
+#question-heading {
+    margin: 0;
+
+    font-size: 34px;
+    line-height: 1.2;
+    letter-spacing: -0.7px;
+
+    color: #172033;
+
+    text-align: left;
+}
+
+.assessment-description {
+    max-width: 650px;
+
+    margin: 14px 0 0;
+
+    font-size: 15px;
+    line-height: 1.7;
+
+    color: #697386;
+
+    text-align: left;
+}
+
+.progress-number {
+    min-width: 60px;
+
+    margin-left: auto;
+
+    text-align: right;
+
+    font-size: 17px;
+    font-weight: 700;
+
+    color: #172033;
+}
+
+
+/* =========================================================
+   PROGRESS
+========================================================= */
+
+.progress-wrapper {
+    margin-top: 34px;
+}
+
+.progress-line {
+    width: 100%;
+    height: 6px;
+
+    overflow: hidden;
+
+    border-radius: 10px;
+
+    background: #e8edf4;
+}
+
+#progress-bar {
+    width: 20%;
+    height: 100%;
+
+    border-radius: inherit;
+
+    background: #172033;
+
+    transition: width 0.35s ease;
+}
+
+.progress-status {
+    display: flex;
+    justify-content: space-between;
+
+    margin-top: 10px;
+
+    font-size: 12px;
+    color: #8a93a3;
+}
+
+#progress-text {
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   QUESTION CARD
+========================================================= */
+
+.question-card {
+    margin-top: 40px;
+
+    padding: 32px;
+
+    background: #ffffff;
+
+    border: 1px solid #e7ebf1;
+    border-radius: 18px;
+
+    box-shadow:
+        0 8px 30px rgba(20, 30, 50, 0.04);
+}
+
+.question-header {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    margin-bottom: 18px;
+}
+
+.question-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    width: 38px;
+    height: 38px;
+
+    border-radius: 10px;
+
+    background: #f0f3f7;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    color: #172033;
+}
+
+.question-title {
+    display: block;
+
+    font-size: 19px;
+    font-weight: 700;
+
+    color: #172033;
+}
+
+.selection-hint {
+    margin: 4px 0 0;
+
+    font-size: 13px;
+    color: #8a93a3;
+}
+
+
+/* =========================================================
+   OPTION GRID
+========================================================= */
+
+.option-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 14px;
+}
+
+
+/* =========================================================
+   NORMAL OPTION
+========================================================= */
+
+.option {
+    position: relative;
+
+    min-height: 105px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 20px 48px 20px 20px;
+
+    border: 1px solid #e2e7ee;
+    border-radius: 14px;
+
+    background: #ffffff;
+
+    cursor: pointer;
+
+    transition:
+        border-color 0.2s ease,
+        background 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.option:hover {
+    border-color: #b9c2d0;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 20px rgba(20, 30, 50, 0.06);
+}
+
+.option input {
+    position: absolute;
+
+    opacity: 0;
+    pointer-events: none;
+}
+
+.option-content {
+    display: flex;
+    flex-direction: column;
+
+    gap: 6px;
+}
+
+.option-icon {
+    font-size: 24px;
+    line-height: 1;
+}
+
+.option-text {
+    font-size: 15px;
+    line-height: 1.35;
+    font-weight: 600;
+
+    color: #172033;
+}
+
+
+/* =========================================================
+   CHECK INDICATOR
+========================================================= */
+
+.option-check {
+    position: absolute;
+
+    right: 18px;
+    top: 50%;
+
+    width: 21px;
+    height: 21px;
+
+    transform: translateY(-50%);
+
+    border: 1.5px solid #cbd2dc;
+    border-radius: 50%;
+
+    background: #ffffff;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease;
+}
+
+
+/* =========================================================
+   SELECTED OPTION
+========================================================= */
+
+.option.selected {
+    border-color: #172033;
+
+    background: #f6f8fb;
+
+    box-shadow:
+        0 5px 18px rgba(20, 30, 50, 0.06);
+}
+
+.option.selected .option-check {
+    border-color: #172033;
+
+    background: #172033;
+}
+
+.option.selected .option-check::after {
+    content: "";
+
+    position: absolute;
+
+    width: 7px;
+    height: 4px;
+
+    left: 6px;
+    top: 6px;
+
+    border-left: 2px solid #ffffff;
+    border-bottom: 2px solid #ffffff;
+
+    transform: rotate(-45deg);
+}
+
+
+/* =========================================================
+   EDUCATION OPTION
+========================================================= */
+
+.education-option {
+    display: block;
+
+    min-height: 105px;
+
+    padding: 20px;
+
+    overflow: hidden;
+}
+
+.education-option>.option-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    gap: 14px;
+
+    min-height: 64px;
+
+    padding-right: 28px;
+}
+
+.education-option>.option-check {
+    top: 42px;
+}
+
+
+/* =========================================================
+   EDUCATION SPECIALIZATION PANEL
+========================================================= */
+
+.specialization-options {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 8px;
+
+    max-height: 0;
+
+    margin-top: 0;
+    padding-top: 0;
+
+    overflow: hidden;
+
+    opacity: 0;
+
+    border-top: 1px solid transparent;
+
+    transition:
+        max-height 0.3s ease,
+        margin-top 0.3s ease,
+        padding-top 0.3s ease,
+        opacity 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.specialization-options.open {
+    max-height: 700px;
+
+    margin-top: 16px;
+    padding-top: 16px;
+
+    opacity: 1;
+
+    border-top-color: #e8ecf2;
+}
+
+
+/* =========================================================
+   SPECIALIZATION ITEM
+========================================================= */
+
+.specialization-item {
+    width: 100%;
+
+    min-height: 44px;
+
+    padding: 9px 12px;
+
+    border: 1px solid #e1e6ed;
+    border-radius: 9px;
+
+    background: #ffffff;
+
+    color: #4b5565;
+
+    font-family: inherit;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    line-height: 1.35;
+
+    text-align: left;
+
+    cursor: pointer;
+
+    transition:
+        border-color 0.2s ease,
+        background 0.2s ease,
+        color 0.2s ease;
+}
+
+.specialization-item:hover {
+    border-color: #b9c2d0;
+
+    background: #f8fafc;
+}
+
+.specialization-item.selected {
+    border-color: #172033;
+
+    background: #172033;
+
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   VALIDATION
+========================================================= */
+
+#validation-message {
+    min-height: 20px;
+
+    margin-top: 18px;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    color: #b42318;
+
+    opacity: 0;
+
+    transform: translateY(-4px);
+
+    transition:
+        opacity 0.2s ease,
+        transform 0.2s ease;
+}
+
+#validation-message.show {
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+
+/* =========================================================
+   ACTION BUTTONS
+========================================================= */
+
+.assessment-actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-top: 24px;
+}
+
+.back-btn,
+.next-btn {
+    height: 48px;
+
+    padding: 0 22px;
+
+    border-radius: 11px;
+
+    font-family: inherit;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease,
+        opacity 0.2s ease;
+}
+
+
+/* ---------- BACK ---------- */
+
+.back-btn {
+    border: 1px solid #dce2ea;
+
+    background: #ffffff;
+
+    color: #4f5b6d;
+}
+
+.back-btn:hover:not(:disabled) {
+    border-color: #b9c2d0;
+
+    background: #f8fafc;
+}
+
+
+/* ---------- NEXT ---------- */
+
+.next-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    min-width: 150px;
+
+    border: 1px solid #172033;
+
+    background: #172033;
+
+    color: #ffffff;
+}
+
+.next-btn:hover:not(:disabled) {
+    background: #27344b;
+
+    transform: translateY(-1px);
+}
+
+.next-btn:disabled {
+    cursor: wait;
+
+    opacity: 0.65;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.assessment-footer {
+    width: min(900px, 90%);
+
+    margin: 0 auto;
+
+    padding: 22px 0 28px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    border-top: 1px solid #e5e9ef;
+
+    font-size: 12px;
+
+    color: #8a93a3;
+}
+
+.assessment-footer-brand {
+    font-weight: 700;
+
+    color: #596477;
+}
+
+
+/* =========================================================
+   VALIDATION ANIMATION
+========================================================= */
+
+.question-card.validation-error {
+    animation: validationShake 0.35s ease;
+}
+
+@keyframes validationShake {
+
+    0% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-4px);
+    }
+
+    50% {
+        transform: translateX(4px);
+    }
+
+    75% {
+        transform: translateX(-3px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVE — TABLET / MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .assessment-navbar {
+        height: 64px;
+
+        padding: 0 5%;
+    }
+
+    .assessment-label {
+        font-size: 10px;
+    }
+
+    .assessment-container {
+        width: 90%;
+
+        padding: 38px 0 50px;
+    }
+
+    .assessment-top {
+        display: block !important;
+    }
+
+    .assessment-heading {
+        width: 100%;
+    }
+
+    #question-heading {
+        font-size: 27px;
+    }
+
+    .assessment-description {
+        font-size: 14px;
+    }
+
+    .progress-number {
+        margin-top: 15px;
+        margin-left: 0;
+
+        text-align: left;
+
+        font-size: 15px;
+    }
+
+    .question-card {
+        margin-top: 30px;
+
+        padding: 22px;
+
+        border-radius: 15px;
+    }
+
+    .option-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .option {
+        min-height: 90px;
+    }
+
+    .education-option {
+        padding: 17px;
+    }
+
+    .education-option>.option-content {
+        min-height: 55px;
+    }
+
+    .specialization-options {
+        grid-template-columns: 1fr;
+    }
+
+    .specialization-options.open {
+        max-height: 1000px;
+    }
+
+    .assessment-footer {
+        width: 90%;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        padding-bottom: 24px;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 450px) {
+
+    .assessment-brand {
+        font-size: 15px;
+    }
+
+    .brand-mark {
+        width: 30px;
+        height: 30px;
+
+        border-radius: 8px;
+    }
+
+    .assessment-label {
+        display: none;
+    }
+
+    #question-heading {
+        font-size: 24px;
+    }
+
+    .assessment-top {
+        gap: 15px;
+    }
+
+    .progress-number {
+        font-size: 13px;
+    }
+
+    .question-card {
+        padding: 18px;
+    }
+
+    .question-header {
+        margin-bottom: 20px;
+    }
+
+    .question-title {
+        font-size: 17px;
+    }
+
+    .education-option {
+        padding: 15px;
+    }
+
+    .education-option>.option-content {
+        gap: 11px;
+    }
+
+    .education-option .option-icon {
+        font-size: 22px;
+    }
+
+    .education-option .option-text {
+        font-size: 14px;
+    }
+
+    .specialization-item {
+        min-height: 42px;
+
+        padding: 8px 10px;
+
+        font-size: 11px;
+    }
+
+    .assessment-actions {
+        gap: 12px;
+    }
+
+    .back-btn,
+    .next-btn {
+        height: 45px;
+
+        padding: 0 16px;
+    }
+
+    .next-btn {
+        min-width: 135px;
+    }
+}
+
+/* =========================================================
+   EDUCATION CARD DROPDOWN
+   ========================================================= */
+
+.education-dropdown-wrapper {
+    position: relative;
+    width: 100%;
+    margin-top: 14px;
+}
+
+
+/* Dropdown button */
+
+.education-dropdown-button {
+    width: 100%;
+    min-height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 10px 13px;
+
+    border: 1px solid #dce2ea;
+    border-radius: 9px;
+
+    background: #ffffff;
+    color: #596477;
+
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 500;
+
+    cursor: pointer;
+
+    text-align: left;
+
+    transition:
+        border-color 0.2s ease,
+        background 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.education-dropdown-button:hover {
+    border-color: #aeb8c7;
+    background: #f8fafc;
+}
+
+
+.education-dropdown-wrapper.open .education-dropdown-button {
+    border-color: #172033;
+    background: #ffffff;
+
+    box-shadow:
+        0 0 0 3px rgba(23, 32, 51, 0.06);
+}
+
+
+/* Arrow */
+
+.dropdown-arrow {
+    margin-left: 10px;
+
+    font-size: 17px;
+    font-weight: 700;
+
+    color: #596477;
+
+    transition:
+        transform 0.2s ease;
+}
+
+
+.education-dropdown-wrapper.open .dropdown-arrow {
+    transform: rotate(180deg);
+}
+
+
+/* =========================================================
+   DROPDOWN MENU
+   ========================================================= */
+
+.education-dropdown-menu {
+    position: absolute;
+
+    left: 0;
+    right: 0;
+
+    top: calc(100% + 7px);
+
+    z-index: 1000;
+
+    display: none;
+
+    max-height: 240px;
+
+    overflow-y: auto;
+
+    padding: 6px;
+
+    border: 1px solid #dce2ea;
+    border-radius: 10px;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 12px 30px rgba(20, 30, 50, 0.12);
+}
+
+
+.education-dropdown-menu.open {
+    display: block;
+}
+
+
+/* Dropdown items */
+
+.education-dropdown-item {
+    width: 100%;
+
+    display: block;
+
+    padding: 10px 11px;
+
+    border: none;
+    border-radius: 7px;
+
+    background: transparent;
+
+    color: #172033;
+
+    font-family: inherit;
+    font-size: 13px;
+
+    text-align: left;
+
+    cursor: pointer;
+
+    transition:
+        background 0.15s ease,
+        color 0.15s ease;
+}
+
+
+.education-dropdown-item:hover {
+    background: #f1f4f8;
+}
+
+
+.education-dropdown-item.active {
+    background: #172033;
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   EDUCATION CARD FIX
+   ========================================================= */
+
+#options-container .option {
+    overflow: visible;
+}
+
+
+#options-container .option-content {
+    width: 100%;
+}
+
+
+#options-container .option-content .option-text {
+    display: block;
+    margin-bottom: 2px;
+}
+
+
+/* =========================================================
+   EDUCATION SELECTED CARD
+   ========================================================= */
+
+#options-container .option.selected {
+    border-color: #172033;
+    background: #f8fafc;
+}
+
+
+/* =========================================================
+   REMOVE ANY OLD SPECIALIZATION CONTAINER
+   ========================================================= */
+
+#specialization-container {
+    display: none !important;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    .education-dropdown-menu {
+        max-height: 220px;
+    }
+
+    .education-dropdown-button {
+        font-size: 12px;
+    }
+
+    .education-dropdown-item {
+        font-size: 12px;
+        padding: 10px;
+    }
+}
+
+/* =========================================================
+   FINAL FIX — EDUCATION DROPDOWN OVERLAP + BLINK
+   ========================================================= */
+
+/* Education cards ko stacking control do */
+#options-container .option {
+    position: relative;
+    overflow: visible;
+}
+
+/* Jab kisi education card ka dropdown open ho,
+   woh card sabke upar rahe */
+#options-container .option:has(.education-dropdown-wrapper.open) {
+    z-index: 1000;
+}
+
+/* Dropdown wrapper ko bhi proper stacking do */
+.education-dropdown-wrapper {
+    position: relative;
+    z-index: 1001;
+}
+
+/* Dropdown menu sabse upar rahe */
+.education-dropdown-menu {
+    position: absolute;
+    z-index: 9999;
+
+    left: 0;
+    right: 0;
+
+    top: calc(100% + 7px);
+
+    max-height: 240px;
+    overflow-y: auto;
+}
+
+/* =========================================================
+   STOP HOVER BLINK / JUMP
+   ========================================================= */
+
+/* Education cards par hover movement band */
+#options-container .option {
+    transform: none !important;
+}
+
+/* Dropdown open hone par bhi card move na ho */
+#options-container .option:hover {
+    transform: none !important;
+}
+
+/* Dropdown ke andar mouse le jaane par
+   card ka hover effect interfere na kare */
+.education-dropdown-wrapper,
+.education-dropdown-menu,
+.education-dropdown-item {
+    transform: none !important;
+}
+
+
+/* =========================================================
+   DROPDOWN BUTTON
+   ========================================================= */
+
+.education-dropdown-button {
+    position: relative;
+    z-index: 1002;
+
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   DROPDOWN MENU
+   ========================================================= */
+
+.education-dropdown-menu {
+    background: #ffffff;
+
+    border: 1px solid #dce2ea;
+    border-radius: 10px;
+
+    box-shadow:
+        0 14px 35px rgba(20, 30, 50, 0.16);
+}
+
+
+/* Open menu */
+.education-dropdown-menu.open {
+    display: block;
+}
+
+
+/* Dropdown option */
+.education-dropdown-item {
+    position: relative;
+    z-index: 10000;
+
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   GRID STACKING FIX
+   ========================================================= */
+
+/* Education grid items ko normal stacking se bahar
+   aane do */
+#options-container {
+    position: relative;
+    z-index: 1;
+}
+
+
+/* Open card always above other cards */
+#options-container .option:has(.education-dropdown-wrapper.open) {
+    z-index: 9999;
+}
+
+
+/* Neeche wale cards dropdown ke upar na aaye */
+#options-container .option:has(.education-dropdown-wrapper.open)~.option {
+    z-index: 1;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    #options-container .option:has(.education-dropdown-wrapper.open) {
+        z-index: 9999;
+    }
+
+    .education-dropdown-menu {
+        max-height: 220px;
+    }
+}

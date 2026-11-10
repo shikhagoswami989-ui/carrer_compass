@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Career Explorer | Career Compass</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/career_explorer.css') }}">
+
+</head>
+<body>
+
+    <header class="navbar">
+        <a href="/" class="logo"><span>C</span> Career Compass</a>
+
+        <nav>
+            <a href="/">Home</a>
+            <a href="/career-explorer" class="active">Career Explorer</a>
+            <a href="/assessment">Assessment</a>
+        </nav>
+
+    </header>
+
+    <main class="container">
+
+
+        <section class="hero">
+            <span class="eyebrow">YOUR CAREER JOURNEY STARTS HERE</span>
+
+            <h1>Explore Careers.<br>
+                <span>Discover Your Future.</span>
+            </h1>
+
+            <p>Explore technology careers, discover essential skills and find your learning path.</p>
+
+            <div class="search-box">
+                <span>⌕</span>
+                <input type="text" id="searchInput" placeholder="Search careers, skills or job roles...">
+            </div>
+        </section>
+
+        <section class="career-section">
+
+            <div class="section-heading">
+                <div>
+                    <h2>Explore Career Paths</h2>
+                    <p>Find a career that matches your interests.</p>
+                </div>
+
+                <span id="careerCount" class="count"></span>
+            </div>
+
+            <div class="filters" id="filters">
+                <button class="filter active" data-category="All">All Careers</button>
+                <button class="filter" data-category="Development">Development</button>
+                <button class="filter" data-category="Data & Analytics">Data & Analytics</button>
+                <button class="filter" data-category="AI & ML">AI & ML</button>
+                <button class="filter" data-category="Cybersecurity">Cybersecurity</button>
+                <button class="filter" data-category="Design">Design</button>
+                <button class="filter" data-category="Business">Business</button>
+            </div>
+
+            <div class="career-grid" id="careerGrid"></div>
+
+            <div id="noResults" class="no-results" hidden>
+                <h3>No careers found</h3>
+                <p>Try another search or select a different category.</p>
+            </div>
+
+        </section>
+
+        <section class="bottom-cta">
+            <div>
+                <h2>Not sure which career suits you?</h2>
+                <p>Take our career assessment to explore suitable career paths.</p>
+            </div>
+
+            <a href="/assessment" class="primary-btn">Take Assessment →</a>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>© 2026 Career Compass · Explore. Learn. Grow.</p>
+    </footer>
+
+    <div id="careerModal" class="modal" hidden>
+        <div class="modal-content">
+
+            <button class="close-btn" id="closeModal" aria-label="Close">×</button>
+
+            <span id="modalCategory" class="eyebrow"></span>
+
+            <h2 id="modalTitle"></h2>
+
+            <p id="modalOverview" class="modal-overview"></p>
+
+            <h3>Common Job Roles</h3>
+            <div id="modalRoles" class="detail-tags"></div>
+
+            <h3>Skills to Learn</h3>
+            <div id="modalSkills" class="detail-tags"></div>
+
+            <h3>Education</h3>
+            <p id="modalEducation"></p>
+
+            <h3>Companies to Explore</h3>
+            <p class="company-note">
+                Explore these companies' career websites. Listed companies may not have current vacancies for every
+                role.
+            </p>
+
+            <div id="modalCompanies" class="company-list"></div>
+
+            <a href="/skill-quiz" class="primary-btn modal-assessment">
+                Test Your Skills →
+            </a>
+
+        </div>
+
+    </div>
+
+    <script src="{{ url_for('static', filename='js/career_explorer.js') }}"></script>
+
+</body>
+</html>
